@@ -1,0 +1,62 @@
+<compositeSubscriptionElementList>
+  <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="false">
+    <expression operator="And">
+      <condition left="/Message/ClassId" operator="Equal" right="[{6ab56f33-4647-477c-a11a-b141497254d4}]"/>
+    </expression>
+    <ifTrue>
+      <receivers/>
+      <compositeSubscriptionElementList>
+        <switchElement>
+          <messageProperty>/Message/Source</messageProperty>
+          <default>
+            <compositeSubscriptionElementList/>
+          </default>
+          <cases>
+            <caseElement isNull="false">
+              <compareValue>MDM</compareValue>
+              <ifTrue>
+                <compositeSubscriptionElementList>
+                  <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="true">
+                    <ifTrue>
+                      <receivers>
+                        <receiver>308d304b-58b2-4bb4-bfcf-8302580deaa1</receiver>
+                      </receivers>
+                      <compositeSubscriptionElementList/>
+                    </ifTrue>
+                    <ifFalse>
+                      <receivers/>
+                      <compositeSubscriptionElementList/>
+                    </ifFalse>
+                  </compositeSubscriptionElement>
+                </compositeSubscriptionElementList>
+              </ifTrue>
+            </caseElement>
+            <caseElement isNull="false">
+              <compareValue>MSSQL</compareValue>
+              <ifTrue>
+                <compositeSubscriptionElementList>
+                  <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="true">
+                    <ifTrue>
+                      <receivers>
+                        <receiver>cf92bc88-e4f0-40a7-91f2-118c1484c5ff</receiver>
+                      </receivers>
+                      <compositeSubscriptionElementList/>
+                    </ifTrue>
+                    <ifFalse>
+                      <receivers/>
+                      <compositeSubscriptionElementList/>
+                    </ifFalse>
+                  </compositeSubscriptionElement>
+                </compositeSubscriptionElementList>
+              </ifTrue>
+            </caseElement>
+          </cases>
+        </switchElement>
+      </compositeSubscriptionElementList>
+    </ifTrue>
+    <ifFalse>
+      <receivers/>
+      <compositeSubscriptionElementList/>
+    </ifFalse>
+  </compositeSubscriptionElement>
+</compositeSubscriptionElementList>

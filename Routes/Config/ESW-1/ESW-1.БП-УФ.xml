@@ -1,0 +1,68 @@
+<compositeSubscriptionElementList>
+  <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="false">
+    <expression operator="And">
+      <expression operator="Or">
+        <condition left="/Message/ClassId" operator="Equal" right="[{c1f1f0c4-ea0e-4e99-8756-70731a5add86}]"/>
+        <condition left="/Message/ClassId" operator="Equal" right="[{f0244c86-3953-42f8-8bd2-17cbc648bf75}]"/>
+        <condition left="/Message/ClassId" operator="Equal" right="[{dfaecbdd-f2f3-4fb4-940e-5daa90fec49a}]"/>
+        <condition left="/Message/ClassId" operator="Equal" right="[{13e9749b-7409-4977-8ca7-15c76f7af4fc}]"/>
+        <condition left="/Message/ClassId" operator="Equal" right="[{0f162ea7-0c96-4a19-bf2c-549b19f52027}]"/>
+        <condition left="/Message/ClassId" operator="Equal" right="[{061d6874-4429-48ab-8470-a0a3b2f8a0a4}]"/>
+        <condition left="/Message/ClassId" operator="Equal" right="[{89f50cd0-2b93-4e6e-adf8-92711e4e5483}]"/>
+      </expression>
+      <condition left="/Message/Source" operator="Equal" right="[BP]"/>
+    </expression>
+    <ifTrue>
+      <receivers/>
+      <compositeSubscriptionElementList>
+        <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="true">
+          <ifTrue>
+            <receivers>
+              <receiver>4a5230e1-d644-4ea1-9c03-629f0c50eb52</receiver>
+            </receivers>
+            <compositeSubscriptionElementList/>
+          </ifTrue>
+          <ifFalse>
+            <receivers/>
+            <compositeSubscriptionElementList/>
+          </ifFalse>
+        </compositeSubscriptionElement>
+      </compositeSubscriptionElementList>
+    </ifTrue>
+    <ifFalse>
+      <receivers/>
+      <compositeSubscriptionElementList/>
+    </ifFalse>
+  </compositeSubscriptionElement>
+  <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="false">
+    <expression operator="And">
+      <expression operator="Or">
+        <expression operator="Or">
+          <condition left="/Message/ClassId" operator="Equal" right="[{227654e4-261b-41ed-a623-bf9d8800d40d}]"/>
+        </expression>
+      </expression>
+      <condition left="/Message/Source" operator="Equal" right="[UF]"/>
+    </expression>
+    <ifTrue>
+      <receivers/>
+      <compositeSubscriptionElementList>
+        <compositeSubscriptionElement ForceFalseReceivers="false" ForceTrueReceivers="true">
+          <ifTrue>
+            <receivers>
+              <receiver>0deaee2b-3933-4fea-9140-c69c33c0d3af</receiver>
+            </receivers>
+            <compositeSubscriptionElementList/>
+          </ifTrue>
+          <ifFalse>
+            <receivers/>
+            <compositeSubscriptionElementList/>
+          </ifFalse>
+        </compositeSubscriptionElement>
+      </compositeSubscriptionElementList>
+    </ifTrue>
+    <ifFalse>
+      <receivers/>
+      <compositeSubscriptionElementList/>
+    </ifFalse>
+  </compositeSubscriptionElement>
+</compositeSubscriptionElementList>
