@@ -1,0 +1,9 @@
+<esb.messageStorage>
+  <settings id="srv-dt-mdm-demo-02-MS">
+    <dbConfiguration dbPort="27017" dbServer="localhost"/>
+    <esbClient connectionTimeoutMs="1000" name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="esb://srv-dt-mdm-demo-02-DTS"/>
+    <rules>
+        <rule expireAfter="0" expireAfterMeasure="Day" maxRows="30000" maxRowsMeasure="One" name="Default" settingsOption="Count"/>
+    </rules>
+</settings>
+</esb.messageStorage>

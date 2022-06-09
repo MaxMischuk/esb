@@ -1,0 +1,56 @@
+<esb.nodeManager xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="srv-dt-mdm-demo-02-NM">
+  <settings>
+    <services>
+      <service nodeId="00000000-0000-0000-1111-111111111111" nodeType="ControlServer" nodeName="ControlServer" isActive="true" />
+      <service nodeId="96d78dcc-4a6b-4fa1-ab21-e081caa07330" nodeType="BlobStorage" nodeName="BlobStorage" isActive="true" />
+      <service nodeId="070560a7-677f-4d63-bf3e-e8c4aadac0b4" nodeType="NodeManager" nodeName="srv-dt-mdm-demo-02-NM" isActive="true" />
+      <service nodeId="f918c798-9527-4890-b29b-621d1ece4ccb" nodeType="Adapter" nodeName="HTTP_Stat" isActive="true" />
+      <service nodeId="dda3af3c-4a0c-4200-911e-989e9798472d" nodeType="LogSender" nodeName="srv-dt-mdm-demo-02-LogSender" isActive="true" />
+      <service nodeId="4007c0ae-88f5-4c30-8070-b6ce43145b5e" nodeType="Adapter" nodeName="Rest_stat" isActive="true" />
+      <service nodeId="3819c84f-7046-460c-9e6b-9070ed24ccee" nodeType="DataTransferServer" nodeName="srv-dt-mdm-demo-02-DTS" isActive="true" />
+      <service nodeId="8263fa15-e6a9-43cd-8bd4-84896e946386" nodeType="LoggingServer" nodeName="srv-dt-mdm-demo-02-LS" isActive="true" />
+      <service nodeId="91652165-4bf7-4c8b-b4a2-e3f6d4402b86" nodeType="MessageStorage" nodeName="srv-dt-mdm-demo-02-MS" isActive="true" />
+      <service nodeId="cf92bc88-e4f0-40a7-91f2-118c1484c5ff" nodeType="Adapter" nodeName="MDM" isActive="true" />
+      <service nodeId="308d304b-58b2-4bb4-bfcf-8302580deaa1" nodeType="Adapter" nodeName="MSSQL" isActive="true" />
+      <service nodeId="4a5230e1-d644-4ea1-9c03-629f0c50eb52" nodeType="Adapter" nodeName="UF" isActive="true" />
+      <service nodeId="0deaee2b-3933-4fea-9140-c69c33c0d3af" nodeType="Adapter" nodeName="BP" isActive="true" />
+      <service nodeId="9ecac5fd-6e3b-4f38-8e9e-d5ea575d39a4" nodeType="Adapter" nodeName="SQL_2" isActive="true" />
+      <service nodeId="23930310-98f0-4709-97f4-346a73150de6" nodeType="Adapter" nodeName="Statistic" isActive="false" />
+      <service nodeId="691d1987-e5e2-43d7-a67f-b3e6b877ab63" nodeType="Adapter" nodeName="GIT" isActive="true" />
+    </services>
+    <serviceTypes>
+      <serviceType nodeType="NodeManager" nodePath="C:\Program Files (x86)\Datareon\ESB\NodeManager\ESB_NodeManagerEsbService.exe" />
+      <serviceType nodeType="BlobStorage" nodePath="C:\Program Files (x86)\Datareon\ESB\NodeManager\BlobStorageHost.exe" />
+      <serviceType nodeType="LogSender" nodePath="C:\Program Files (x86)\Datareon\ESB\NodeManager\ESB_LogSenderHost.exe" />
+      <serviceType nodeType="Adapter" nodePath="C:\Program Files (x86)\Datareon\ESB\Adapter\ESB_Adapter.exe" nodePath32="C:\Program Files (x86)\Datareon\ESB\Adapter\ESB_Adapter_32bit.exe" />
+      <serviceType nodeType="ControlServer" nodePath="C:\Program Files (x86)\Datareon\ESB\ControlServer\ESB_ControlServerHost.exe" />
+      <serviceType nodeType="DataTransferServer" nodePath="C:\Program Files (x86)\Datareon\ESB\DataTransferServer\ESB_DataTransferServerHost.exe" />
+      <serviceType nodeType="LoggingServer" nodePath="C:\Program Files (x86)\Datareon\ESB\LoggingServer\ESB_LoggingServerHost.exe" />
+      <serviceType nodeType="MessageStorage" nodePath="C:\Program Files (x86)\Datareon\ESB\MessageStorage\ESB_MessageStorageHost.exe" />
+    </serviceTypes>
+    <ports>8090</ports>
+    <mongoSettings>
+      <mongoInstall>1</mongoInstall>
+      <mongoLocal />
+      <mongoUser />
+      <mongoPassword />
+      <authentication />
+      <useCustomSettings />
+      <server>localhost</server>
+      <port>27017</port>
+    </mongoSettings>
+    <tcpSettings>
+      <tcpPort>9999</tcpPort>
+      <resolveSettings />
+    </tcpSettings>
+    <httpsPorts>8443</httpsPorts>
+    <certificateSettings>
+      <isUse>false</isUse>
+      <source>File</source>
+      <description />
+      <path />
+      <password />
+    </certificateSettings>
+    <programDataFolder>C:\ProgramData\Datareon\ESB</programDataFolder>
+  </settings>
+</esb.nodeManager>

@@ -1,0 +1,551 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="308d304b-58b2-4bb4-bfcf-8302580deaa1" id="MSSQL" isClient1C="false" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <msSqlIn name="in">
+      <connection connectionLifetime="30" connectionString="" database="TutorialDB" databaseType="MsSql" integratedSecurity="false" maximumPoolSize="10" minimumPoolSize="5" password="" passwordCode="QWvh/2TJDCKd/JV4kkJNaQ==" pooling="true" queryTimeOut="60" schemaName="public" serverAddress="srv-dt-mdm-demo-02" serverInstance="" serverPort="0" serviceName="" sid="" useConnectionString="false" useUsernameAndPassword="false" user="sa">
+    <properties/>
+</connection>
+      <messageSources>
+        <actions>
+    <action createReply="false" enabled="false" insertOnly="true" name="Statistic" type="TABLE_VIEW">
+        <testExpression>&lt;expression operator="And"/&gt;
+</testExpression>
+        <updateExpression/>
+        <query>SELECT
+  "Statistic"."Node"
+, "Statistic"."Data"
+, "Statistic"."Name"
+, "Statistic"."Object"
+, "Statistic"."Value"
+, "Decryptor"."Name_Node"
+FROM
+  ("Statistic"
+LEFT JOIN "Decryptor" ON ("Statistic"."Node" = "Decryptor"."Node_id"))
+WHERE ("Statistic"."SendNext" = '1')
+</query>
+        <mapping>
+            <inFormatMapping>
+                <fields>
+                    <field id="17aa9ed9-5a05-482a-8cd2-5babedaddb62" isArray="false" isPrimary="false" name="classData" type="">
+                        <fields>
+                            <field id="504e91ae-c7c6-43bd-9f25-6c197ba4d7ec" isArray="false" isPrimary="false" name="Name_Node" type="nvarchar"/>
+                            <field id="587fab86-c3df-4dd3-a218-9e449f1bf532" isArray="false" isPrimary="false" name="Data" type="nvarchar"/>
+                            <field id="6162889e-41a8-473e-8da5-a1716f4610d5" isArray="false" isPrimary="false" name="Node" type="nvarchar"/>
+                            <field id="a01115bb-5a46-4541-a3d4-9f0b7536fcad" isArray="false" isPrimary="false" name="Object" type="nvarchar"/>
+                            <field id="18589717-1bb9-44d9-ad40-188f0f468675" isArray="false" isPrimary="false" name="Value" type="int"/>
+                            <field id="8ad8aad7-3669-4745-bf43-656ae1e7d1c4" isArray="false" isPrimary="false" name="Name" type="nvarchar"/>
+                        </fields>
+                    </field>
+                </fields>
+            </inFormatMapping>
+            <outFormatMapping>
+                <fields>
+                    <field id="6755a50a-2b16-4ed3-8610-be6cbed30f45" isArray="false" isPrimary="false" name="classData" type="">
+                        <fields>
+                            <field id="08d7230b-6bfd-4746-b9eb-bd908909819f" isArray="false" isPrimary="false" name="Data" type="">
+                                <fields>
+                                    <field id="244d2d19-326d-4996-864d-70ea51012582" isArray="false" isPrimary="false" name="Counter" type="">
+                                        <fields>
+                                            <field id="bd8bd1f6-d282-4b26-8ba7-b781a1f4dc11" isArray="false" isPrimary="false" name="TimeFromLastUpdate" type="Int"/>
+                                            <field id="197e72c8-247d-47e3-a720-1d44feae0c06" isArray="false" isPrimary="false" name="GUID" type="String"/>
+                                            <field id="4ada08db-8237-48b5-bf28-8eb6cdb10244" isArray="false" isPrimary="false" name="Value" type="Int"/>
+                                            <field id="88a7bae3-f0ef-47b5-909f-9d8c1e036da4" isArray="false" isPrimary="false" name="DateTime" type="String"/>
+                                            <field id="169d8ae5-49f7-4098-ac8b-8432ee27a80a" isArray="false" isPrimary="false" name="Name" type="String"/>
+                                        </fields>
+                                    </field>
+                                    <field id="921261e7-7dd9-4dfc-95c0-1a2379069d8e" isArray="false" isPrimary="false" name="Node" type="String"/>
+                                    <field id="d7109d94-4c53-40e3-9b71-c86a71532d34" isArray="false" isPrimary="false" name="Object" type="String"/>
+                                    <field id="91f9f372-bc01-4c9b-9d2f-de32f933d6e3" isArray="false" isPrimary="false" name="SendNext" type="String"/>
+                                    <field id="5c464c55-b127-4921-becb-1c11b2a7773a" isArray="false" isPrimary="false" name="Node_to_update" type="String"/>
+                                </fields>
+                            </field>
+                        </fields>
+                    </field>
+                </fields>
+            </outFormatMapping>
+            <outParameterMapping>
+                <fields/>
+            </outParameterMapping>
+            <links>
+                <link inId="504e91ae-c7c6-43bd-9f25-6c197ba4d7ec" outId="921261e7-7dd9-4dfc-95c0-1a2379069d8e"/>
+                <link inId="587fab86-c3df-4dd3-a218-9e449f1bf532" outId="88a7bae3-f0ef-47b5-909f-9d8c1e036da4"/>
+                <link inId="a01115bb-5a46-4541-a3d4-9f0b7536fcad" outId="d7109d94-4c53-40e3-9b71-c86a71532d34"/>
+                <link inId="18589717-1bb9-44d9-ad40-188f0f468675" outId="4ada08db-8237-48b5-bf28-8eb6cdb10244"/>
+                <link inId="8ad8aad7-3669-4745-bf43-656ae1e7d1c4" outId="169d8ae5-49f7-4098-ac8b-8432ee27a80a"/>
+                <link inId="6162889e-41a8-473e-8da5-a1716f4610d5" outId="5c464c55-b127-4921-becb-1c11b2a7773a"/>
+            </links>
+        </mapping>
+        <messageParameters changeClassId="true" changeReceiver="false" changeType="true" classId="{b4e6bbeb-2516-4d18-a5c8-4da867213f11}" receiver=";" type="DTP">
+            <properties/>
+        </messageParameters>
+        <options readTimeInterval="3000" useSendAsArray="false">
+            <trigger attempt="10" attemptStep="000.00:00:10.000" lastDayOfMonth="false" mode="Week" performTime="16:34:29" repeatEnable="true" repeatExecution="EndOfDay" repeatExecutionTime="16:34:29" repeatStep="000.00:00:30.000" startAdapter="true" startTime="2022-03-03T00:00:00" startTimeEnable="false" stopTime="2022-03-04T23:59:59" stopTimeEnable="false" triggerType="Simple">
+                <DaysOfWeek>
+                    <Item day="Monday"/>
+                    <Item day="Tuesday"/>
+                    <Item day="Wednesday"/>
+                    <Item day="Thursday"/>
+                    <Item day="Friday"/>
+                    <Item day="Saturday"/>
+                    <Item day="Sunday"/>
+                </DaysOfWeek>
+                <DaysOfMonth/>
+            </trigger>
+        </options>
+        <postDeleteOptions deletePrimaryKey="" deleteTableName="" executeAfterSend="UPDATE [dbo].[Statistic] SET  [dbo].[Statistic].[SendNext] = 0 WHERE  [dbo].[Statistic].[Node_to_update] = {Node}" useDeleteFromMethod="false" useExecuteAfterSend="true"/>
+        <dbParams/>
+    </action>
+    <action createReply="false" enabled="false" insertOnly="true" name="ПоступлениеТоваровВх" type="TABLE_VIEW">
+        <testExpression>&lt;expression operator="And"/&gt;</testExpression>
+        <updateExpression/>
+        <query>SELECT
+  "PostuplHead"."DelMark"
+, "PostuplHead"."DocDate"
+, "PostuplHead"."Org"
+, "PostuplHead"."Prod"
+, "PostuplHead"."SendDone"
+, "PostuplHead"."Storage"
+, "PostuplHead"."T_UID"
+, "PostuplHead"."Val"
+FROM
+  "PostuplHead"
+WHERE ("PostuplHead"."SendDone" = 0)
+</query>
+        <mapping>
+            <inFormatMapping>
+                <fields>
+                    <field id="186f8d47-3262-495b-a25e-94b879635f5f" isArray="false" isPrimary="false" name="classData">
+                        <fields>
+                            <field id="9f7c1d0e-7c96-4d87-8028-a1baf2349272" isArray="false" isPrimary="false" name="DelMark" type="bit"/>
+                            <field id="cb59ea21-2c3c-40b1-96cc-9095fd7ebd04" isArray="false" isPrimary="false" name="DocDate" type="datetime"/>
+                            <field id="1160b5c7-7368-49ec-95e8-71c2f4b2ec84" isArray="false" isPrimary="false" name="Org" type="uniqueidentifier"/>
+                            <field id="a18f163f-016a-4981-9999-8ad3b05ee8c6" isArray="false" isPrimary="false" name="Prod" type="nchar"/>
+                            <field id="5f4dc968-88a7-46bf-9cdb-08d0d819ecd1" isArray="false" isPrimary="false" name="SendDone" type="smallint"/>
+                            <field id="24795148-249b-49ac-86e7-5d38d9814e3c" isArray="false" isPrimary="false" name="Storage" type="nchar"/>
+                            <field id="0fa077bc-df3d-4860-a740-2e21e2d595fa" isArray="false" isPrimary="false" name="T_UID" type="nchar"/>
+                            <field id="81796a16-80b0-4c63-ae50-ecd314a7b9c4" isArray="false" isPrimary="false" name="Val" type="uniqueidentifier"/>
+                        </fields>
+                    </field>
+                </fields>
+            </inFormatMapping>
+            <outFormatMapping>
+                <fields>
+                    <field id="eceabe17-1363-4148-acee-64e226c95e10" isArray="false" isPrimary="false" name="classData">
+                        <fields>
+                            <field id="442a695e-abf3-4f6b-b7f7-cb74f2d74a5c" isArray="false" isPrimary="false" name="Ссылка" type="String"/>
+                            <field id="9a1d9fa3-8e9b-4de4-ad06-57c8c4d58e8f" isArray="false" isPrimary="false" name="ПометкаУдаления" type="String"/>
+                            <field id="931128c4-0a7d-453f-b0d8-ab18bc21dc9f" isArray="false" isPrimary="false" name="Дата" type="String"/>
+                            <field id="91089072-22d4-412c-8df6-e14708342ea0" isArray="false" isPrimary="false" name="Поставщик" type="String"/>
+                            <field id="5139bec9-6f39-4098-8f06-963fa695ca99" isArray="false" isPrimary="false" name="Склад" type="String"/>
+                            <field id="304710b2-b552-4a6b-a0ac-66242c3eb22b" isArray="false" isPrimary="false" name="Организация" type="String"/>
+                            <field id="020f60a8-8fc2-4f1e-bb42-a6e1818eae93" isArray="false" isPrimary="false" name="Валюта" type="String"/>
+                            <field id="ee1284a7-e7a2-4a36-a5ff-db0a0c0a83ec" isArray="false" isPrimary="false" name="Товары">
+                                <fields>
+                                    <field id="dcdf9c65-6343-4b0b-bcf3-e2f6ac6883be" isArray="true" isPrimary="false" name="row">
+                                        <fields>
+                                            <field id="6a543651-619f-497f-8a01-d68e9403f780" isArray="false" isPrimary="false" name="Товар" type="String"/>
+                                            <field id="7d327aa3-d2a4-4397-9329-456af9d57c0a" isArray="false" isPrimary="false" name="Цена" type="String"/>
+                                            <field id="4092d8a3-29ca-4d92-a4ea-3f0fe73f3479" isArray="false" isPrimary="false" name="Количество" type="String"/>
+                                            <field id="59ac95bc-d522-4258-bee5-19a4f3bc54ea" isArray="false" isPrimary="false" name="Сумма" type="String"/>
+                                        </fields>
+                                    </field>
+                                </fields>
+                            </field>
+                        </fields>
+                    </field>
+                </fields>
+            </outFormatMapping>
+            <outParameterMapping>
+                <fields/>
+            </outParameterMapping>
+            <links>
+                <link inId="cb59ea21-2c3c-40b1-96cc-9095fd7ebd04" outId="931128c4-0a7d-453f-b0d8-ab18bc21dc9f"/>
+                <link inId="1160b5c7-7368-49ec-95e8-71c2f4b2ec84" outId="304710b2-b552-4a6b-a0ac-66242c3eb22b"/>
+                <link inId="24795148-249b-49ac-86e7-5d38d9814e3c" outId="5139bec9-6f39-4098-8f06-963fa695ca99"/>
+                <link inId="a18f163f-016a-4981-9999-8ad3b05ee8c6" outId="91089072-22d4-412c-8df6-e14708342ea0"/>
+                <link inId="0fa077bc-df3d-4860-a740-2e21e2d595fa" outId="442a695e-abf3-4f6b-b7f7-cb74f2d74a5c"/>
+                <link inId="9f7c1d0e-7c96-4d87-8028-a1baf2349272" outId="9a1d9fa3-8e9b-4de4-ad06-57c8c4d58e8f"/>
+                <link inId="81796a16-80b0-4c63-ae50-ecd314a7b9c4" outId="020f60a8-8fc2-4f1e-bb42-a6e1818eae93"/>
+            </links>
+        </mapping>
+        <messageParameters changeClassId="true" changeReceiver="false" changeType="true" classId="{a6a1a337-43de-4c12-be35-1c884ef2a438}" receiver="" type="DTP">
+            <properties/>
+        </messageParameters>
+        <options readTimeInterval="3000" useSendAsArray="false">
+            <trigger attempt="10" attemptStep="000.00:00:10.000" lastDayOfMonth="false" mode="Week" performTime="17:45:19" repeatEnable="true" repeatExecution="EndOfDay" repeatExecutionTime="17:45:19" repeatStep="000.00:00:03.000" startAdapter="true" startTime="2022-03-10T00:00:00" startTimeEnable="false" stopTime="2022-03-11T23:59:59" stopTimeEnable="false" triggerType="Simple">
+                <DaysOfWeek>
+                    <Item day="Monday"/>
+                    <Item day="Tuesday"/>
+                    <Item day="Wednesday"/>
+                    <Item day="Thursday"/>
+                    <Item day="Friday"/>
+                    <Item day="Saturday"/>
+                    <Item day="Sunday"/>
+                </DaysOfWeek>
+                <DaysOfMonth/>
+            </trigger>
+        </options>
+        <postDeleteOptions deletePrimaryKey="" deleteTableName="" executeAfterSend="UPDATE [dbo].[PostuplHead] SET [dbo].[PostuplHead].[SendDone] = 1 WHERE [T_UID] = [T_UID]" useDeleteFromMethod="false" useExecuteAfterSend="true"/>
+        <dbParams/>
+    </action>
+    <action createReply="false" enabled="true" insertOnly="true" name="МТР" type="TABLE_VIEW">
+        <testExpression>&lt;expression operator="And"/&gt;</testExpression>
+        <updateExpression/>
+        <query>SELECT
+  "MTP"."ArticleNumber"
+, "MTP"."CatalogNumber"
+, "MTP"."Code"
+, "MTP"."Name"
+FROM
+  "MTP"
+WHERE ("MTP"."WorkedOut" = 1)
+</query>
+        <mapping>
+            <inFormatMapping>
+                <fields>
+                    <field id="6ed613bb-42c6-4612-9c98-ea1f55e4e1a8" isArray="false" isPrimary="false" name="classData">
+                        <fields>
+                            <field id="4997b47c-919a-4938-b8c7-c72bdb2a0300" isArray="false" isPrimary="false" name="ArticleNumber" type="nchar"/>
+                            <field id="dc524a30-c272-4700-af2f-665a0fe604cd" isArray="false" isPrimary="false" name="CatalogNumber" type="nchar"/>
+                            <field id="60ab87c3-e879-4935-ae76-77e0917d3922" isArray="false" isPrimary="false" name="Code" type="int"/>
+                            <field id="06bb7428-1aa1-496f-b7ac-cf00b6009de3" isArray="false" isPrimary="false" name="Name" type="nchar"/>
+                        </fields>
+                    </field>
+                </fields>
+            </inFormatMapping>
+            <outFormatMapping>
+                <fields>
+                    <field id="18ae5ece-5b8e-49b5-9d7a-9eef26445e19" isArray="false" isPrimary="false" name="classData">
+                        <fields>
+                            <field id="3a8d9dc0-c5e0-47f2-8610-e044f2532741" isArray="false" isPrimary="false" name="Артикул" type="String"/>
+                            <field id="5c63cafc-f2eb-46ec-b8a9-d822a5c89aff" isArray="false" isPrimary="false" name="КаталожныйНомер" type="String"/>
+                            <field id="ea1f8152-a99c-47cb-8778-acef4a4c5f24" isArray="false" isPrimary="false" name="Наименование" type="String"/>
+                            <field id="0803b7ba-c095-4fba-aeaf-e3ddde68c1ae" isArray="false" isPrimary="false" name="Код" type="String"/>
+                        </fields>
+                    </field>
+                </fields>
+            </outFormatMapping>
+            <outParameterMapping>
+                <fields/>
+            </outParameterMapping>
+            <links>
+                <link inId="06bb7428-1aa1-496f-b7ac-cf00b6009de3" outId="ea1f8152-a99c-47cb-8778-acef4a4c5f24"/>
+                <link inId="60ab87c3-e879-4935-ae76-77e0917d3922" outId="0803b7ba-c095-4fba-aeaf-e3ddde68c1ae"/>
+                <link inId="dc524a30-c272-4700-af2f-665a0fe604cd" outId="5c63cafc-f2eb-46ec-b8a9-d822a5c89aff"/>
+                <link inId="4997b47c-919a-4938-b8c7-c72bdb2a0300" outId="3a8d9dc0-c5e0-47f2-8610-e044f2532741"/>
+            </links>
+        </mapping>
+        <messageParameters changeClassId="true" changeReceiver="false" changeType="true" classId="{6ab56f33-4647-477c-a11a-b141497254d4}" receiver=";" type="DTP">
+            <properties/>
+        </messageParameters>
+        <options readTimeInterval="3000" useSendAsArray="false">
+            <trigger attempt="10" attemptStep="000.00:00:10.000" lastDayOfMonth="false" mode="Week" repeatEnable="true" repeatExecution="EndOfDay" repeatStep="000.00:00:03.000" startAdapter="true" startTime="2022-03-14T14:47:22.097" startTimeEnable="false" stopTime="2022-03-15T14:47:22.097" stopTimeEnable="false" triggerType="Simple">
+                <DaysOfWeek>
+                    <Item day="Monday"/>
+                    <Item day="Tuesday"/>
+                    <Item day="Wednesday"/>
+                    <Item day="Thursday"/>
+                    <Item day="Friday"/>
+                    <Item day="Saturday"/>
+                    <Item day="Sunday"/>
+                </DaysOfWeek>
+                <DaysOfMonth/>
+            </trigger>
+        </options>
+        <postDeleteOptions deletePrimaryKey="" deleteTableName="" executeAfterSend="UPDATE [dbo].[MTP] SET WorkedOut = 0 WHERE [Code] = {Code}" useDeleteFromMethod="false" useExecuteAfterSend="true"/>
+        <dbParams/>
+    </action>
+</actions>
+      </messageSources>
+    </msSqlIn>
+    <msSqlOut name="out" parallelDegree="1">
+      <connection connectionLifetime="30" connectionString="" database="TutorialDB" databaseType="MsSql" integratedSecurity="false" maximumPoolSize="10" minimumPoolSize="5" password="" passwordCode="QWvh/2TJDCKd/JV4kkJNaQ==" pooling="true" queryTimeOut="60" schemaName="public" serverAddress="srv-dt-mdm-demo-02" serverInstance="" serverPort="0" serviceName="" sid="" useConnectionString="false" useUsernameAndPassword="false" user="sa">
+    <properties/>
+</connection>
+      <messageSources>
+        <actions>
+    <action createReply="false" enabled="false" insertOnly="false" name="Statistic" type="TABLE_VIEW">
+        <testExpression>&lt;expression operator="And"&gt;
+  &lt;condition left="/Message/ClassId" operator="Equal" right="[{b4e6bbeb-2516-4d18-a5c8-4da867213f11}]"/&gt;
+&lt;/expression&gt;
+</testExpression>
+        <updateExpression>WHERE Node = DTR@classData_Data_Node</updateExpression>
+        <query>Statistic</query>
+        <mapping>
+            <inFormatMapping>
+                <fields>
+                    <field id="575e40c2-6e61-4dcf-9f61-5a648ecbaa90" isArray="false" isPrimary="false" name="Message" type="">
+                        <fields>
+                            <field id="0f668d9b-a5c6-4a54-a903-e36442985b6d" isArray="false" isPrimary="false" name="Id" type=""/>
+                            <field id="3c48c719-e1e8-4d78-866e-080215f0ffec" isArray="false" isPrimary="false" name="Type" type=""/>
+                            <field id="4dcdac36-dedb-4b84-8e18-3efef05db138" isArray="false" isPrimary="false" name="CreationTime" type=""/>
+                            <field id="b580f624-a3e3-4935-b6eb-5292cad1e3ba" isArray="false" isPrimary="false" name="ClassId" type=""/>
+                            <field id="19fd85d0-b3bc-49e4-85ad-868820f5e1df" isArray="false" isPrimary="false" name="Source" type=""/>
+                            <field id="40f37805-7152-4364-afab-1a5c0721eebe" isArray="false" isPrimary="false" name="Receivers" type=""/>
+                            <field id="2706fc28-5ae2-4544-8471-7d457e8e507d" isArray="false" isPrimary="false" name="ReplyTo" type=""/>
+                            <field id="bd2691de-8308-420e-aa15-c435f35d8f9f" isArray="false" isPrimary="false" name="Property" type="">
+                                <fields/>
+                            </field>
+                            <field id="a4a25fd0-fcc9-4797-a518-01f0ab7c8e77" isArray="false" isPrimary="false" name="Body" type=""/>
+                            <field id="d682a958-fef7-465c-b7fa-9bbecc9ab195" isArray="false" isPrimary="false" name="XmlBody" type="">
+                                <fields>
+                                    <field id="fe72ee6d-a6ee-4526-9248-39b69fc87ecd" isArray="false" isPrimary="false" name="classData" type="">
+                                        <fields>
+                                            <field id="7856ad61-7e1b-43ae-8b44-8fbdfcf3eb26" isArray="false" isPrimary="false" name="Data" type="">
+                                                <fields>
+                                                    <field id="35376a8a-75a0-45f6-9448-44cd0c4c964a" isArray="false" isPrimary="false" name="Counter" type="">
+                                                        <fields>
+                                                            <field id="e96b6deb-eaed-460a-b590-b8ececf11dae" isArray="false" isPrimary="false" name="TimeFromLastUpdate" type="Int"/>
+                                                            <field id="96ea1bf5-70bd-43e3-8f33-0de0dfc33fa9" isArray="false" isPrimary="false" name="GUID" type="String"/>
+                                                            <field id="7d532482-5b0e-42f6-9b3d-a02bfc2c4275" isArray="false" isPrimary="false" name="Value" type="Int"/>
+                                                            <field id="7ef71a47-c402-4244-8526-d7b74abbcaeb" isArray="false" isPrimary="false" name="DateTime" type="String"/>
+                                                            <field id="dd17cf39-f5e5-4e31-af5e-d5ede282de45" isArray="false" isPrimary="false" name="Name" type="String"/>
+                                                        </fields>
+                                                    </field>
+                                                    <field id="bea63529-8ea0-4610-b889-36c6e4a9a252" isArray="false" isPrimary="false" name="Node" type="String"/>
+                                                    <field id="b911a03c-048f-44ca-b5c0-8a0ed9e312bd" isArray="false" isPrimary="false" name="Object" type="String"/>
+                                                    <field id="f29da072-c860-4634-a088-a0ad3ee4ecca" isArray="false" isPrimary="false" name="SendNext" type="String"/>
+                                                </fields>
+                                            </field>
+                                        </fields>
+                                    </field>
+                                </fields>
+                            </field>
+                        </fields>
+                    </field>
+                </fields>
+            </inFormatMapping>
+            <outFormatMapping>
+                <fields>
+                    <field id="8149fff4-d527-40b8-b628-00bb410bb526" isArray="false" isPrimary="false" name="Statistic" type="">
+                        <fields>
+                            <field id="7da15025-2576-4d8a-8bc5-38254436cba9" isArray="false" isPrimary="false" name="Data" type="nvarchar"/>
+                            <field id="57d428ce-fc6c-492a-b615-9111ac8243c6" isArray="false" isPrimary="false" name="Name" type="nvarchar"/>
+                            <field id="52ab2e89-9d0e-4d5c-bfbd-a5ebf593353a" isArray="false" isPrimary="false" name="Node" type="nvarchar"/>
+                            <field id="2eb05052-1337-4a3b-8aa7-de50496b69be" isArray="false" isPrimary="false" name="Object" type="nvarchar"/>
+                            <field id="b01e4165-2cee-4aac-9a44-d820dda30be0" isArray="false" isPrimary="false" name="SendNext" type="int"/>
+                            <field id="66ef9538-3f9d-4a60-8005-768cf3b7fd25" isArray="false" isPrimary="false" name="Value" type="int"/>
+                        </fields>
+                    </field>
+                </fields>
+            </outFormatMapping>
+            <outParameterMapping>
+                <fields/>
+            </outParameterMapping>
+            <links>
+                <link inId="bea63529-8ea0-4610-b889-36c6e4a9a252" outId="52ab2e89-9d0e-4d5c-bfbd-a5ebf593353a"/>
+                <link inId="dd17cf39-f5e5-4e31-af5e-d5ede282de45" outId="57d428ce-fc6c-492a-b615-9111ac8243c6"/>
+                <link inId="7ef71a47-c402-4244-8526-d7b74abbcaeb" outId="7da15025-2576-4d8a-8bc5-38254436cba9"/>
+                <link inId="7d532482-5b0e-42f6-9b3d-a02bfc2c4275" outId="66ef9538-3f9d-4a60-8005-768cf3b7fd25"/>
+                <link inId="f29da072-c860-4634-a088-a0ad3ee4ecca" outId="b01e4165-2cee-4aac-9a44-d820dda30be0"/>
+                <link inId="b911a03c-048f-44ca-b5c0-8a0ed9e312bd" outId="2eb05052-1337-4a3b-8aa7-de50496b69be"/>
+            </links>
+        </mapping>
+        <messageParameters changeClassId="false" changeReceiver="false" changeType="false" classId="" receiver="" type="">
+            <properties/>
+        </messageParameters>
+        <options readTimeInterval="3000" useSendAsArray="false"/>
+        <postDeleteOptions deletePrimaryKey="" deleteTableName="" executeAfterSend="" useDeleteFromMethod="false" useExecuteAfterSend="false"/>
+        <dbParams>
+            <dbParams formatString="" name="DTR@classData_Data_Node" type="varchar" value="{/Message/XmlBody/classData/Data/Node}"/>
+        </dbParams>
+    </action>
+    <action createReply="false" enabled="false" insertOnly="false" name="ПоступлениеТоваровИсх" type="TABLE_VIEW">
+        <testExpression>&lt;expression operator="And"&gt;
+  &lt;condition left="/Message/ClassId" operator="Equal" right="[{a6a1a337-43de-4c12-be35-1c884ef2a438}]"/&gt;
+&lt;/expression&gt;
+</testExpression>
+        <updateExpression>WHERE T_UID = DTR@classData_Ссылка</updateExpression>
+        <query>PostuplHead</query>
+        <mapping>
+            <inFormatMapping>
+                <fields>
+                    <field id="08bcd548-1b9a-4c1a-a282-6bbda361045f" isArray="false" isPrimary="false" name="Message" type="">
+                        <fields>
+                            <field id="e1730499-45d1-48a9-a7ed-9686830fc45e" isArray="false" isPrimary="false" name="Id" type=""/>
+                            <field id="9bfdc771-c55f-4e4b-af9a-cc80c9c6ba98" isArray="false" isPrimary="false" name="Type" type=""/>
+                            <field id="fda94da7-b9ec-45fa-baf4-b60ebde1bcad" isArray="false" isPrimary="false" name="CreationTime" type=""/>
+                            <field id="c39ee2e2-db08-42d3-a578-86b7c60ac663" isArray="false" isPrimary="false" name="ClassId" type=""/>
+                            <field id="f0016022-eec1-4b92-8614-5cef3ff88330" isArray="false" isPrimary="false" name="Source" type=""/>
+                            <field id="568da15a-cff9-410e-8b23-2df74f42e2ba" isArray="false" isPrimary="false" name="Receivers" type=""/>
+                            <field id="02fa5a80-fa8f-4e9a-8a2f-1ad4be4c9d8d" isArray="false" isPrimary="false" name="ReplyTo" type=""/>
+                            <field id="2e30d82a-5313-4c22-960d-899224735c40" isArray="false" isPrimary="false" name="Property" type="">
+                                <fields/>
+                            </field>
+                            <field id="3afd59b1-d2e8-4dd3-9389-865330a7d2e5" isArray="false" isPrimary="false" name="Body" type=""/>
+                            <field id="39083b49-e87a-4e12-9e58-355131b3f9ec" isArray="false" isPrimary="false" name="XmlBody" type="">
+                                <fields>
+                                    <field id="68243a99-1e02-4e12-a68b-893a10062436" isArray="false" isPrimary="false" name="classData" type="">
+                                        <fields>
+                                            <field id="9d4ae8c8-c86e-448d-b988-eadb7d725b44" isArray="false" isPrimary="false" name="Ссылка" type="String"/>
+                                            <field id="571a95ec-e55d-458c-a024-a70ca14ef2d8" isArray="false" isPrimary="false" name="ПометкаУдаления" type="String"/>
+                                            <field id="e7a3f387-ec55-4aa4-8937-c2d1f64547c3" isArray="false" isPrimary="false" name="Дата" type="String"/>
+                                            <field id="db689515-389f-4bf5-9eed-a5b0e2669ba0" isArray="false" isPrimary="false" name="Поставщик" type="String"/>
+                                            <field id="59fa9034-6ac6-428b-96a1-b79f9332f835" isArray="false" isPrimary="false" name="Склад" type="String"/>
+                                            <field id="fc74d574-4fd6-4914-84d5-01838ae437ed" isArray="false" isPrimary="false" name="Организация" type="String"/>
+                                            <field id="8039c26f-ae44-4f7f-84b9-551791b59c9c" isArray="false" isPrimary="false" name="Валюта" type="String"/>
+                                            <field id="faa16cc4-9a32-4cb0-97d2-b53c5899d45c" isArray="false" isPrimary="false" name="Товары" type="">
+                                                <fields>
+                                                    <field id="ef2d2f6e-1944-4c78-8855-e89eef6dbe86" isArray="true" isPrimary="false" name="row" type="">
+                                                        <fields>
+                                                            <field id="1817d514-41a9-4bb2-8bc0-ff688bda17c8" isArray="false" isPrimary="false" name="Товар" type="String"/>
+                                                            <field id="003a5947-b1af-46ef-85eb-d10582be8476" isArray="false" isPrimary="false" name="Цена" type="String"/>
+                                                            <field id="68ff3cb6-7806-45c6-9a93-5b8dcac27d0b" isArray="false" isPrimary="false" name="Количество" type="String"/>
+                                                            <field id="c492edb9-7d04-466e-a6e0-6348a8c6d2b9" isArray="false" isPrimary="false" name="Сумма" type="String"/>
+                                                        </fields>
+                                                    </field>
+                                                </fields>
+                                            </field>
+                                        </fields>
+                                    </field>
+                                </fields>
+                            </field>
+                        </fields>
+                    </field>
+                </fields>
+            </inFormatMapping>
+            <outFormatMapping>
+                <fields>
+                    <field id="564587fa-e75e-4961-a74b-a70d703228bc" isArray="false" isPrimary="false" name="PostuplHead" type="">
+                        <fields>
+                            <field id="81acd2ef-2bf7-41a1-80f0-4397389fa6fe" isArray="false" isPrimary="false" name="DelMark" type="bit"/>
+                            <field id="b9270b5b-5d7a-4427-98e0-9a5c95b0dea6" isArray="false" isPrimary="false" name="DocDate" type="datetime"/>
+                            <field id="9da003b6-c980-459a-8859-ae439c6a76c6" isArray="false" isPrimary="false" name="Org" type="uniqueidentifier"/>
+                            <field id="aabf2e0a-e80e-4bb3-a446-89ca6fa1e3e0" isArray="false" isPrimary="false" name="Prod" type="nchar"/>
+                            <field id="b4b8effe-4ed1-4e13-9a17-dafa1f12c59e" isArray="false" isPrimary="false" name="Storage" type="nchar"/>
+                            <field id="2bccb480-396c-431b-b392-448bc5a63809" isArray="false" isPrimary="false" name="T_UID" type="nchar"/>
+                            <field id="1155b76f-ec92-4e86-8963-bd4bdd806789" isArray="false" isPrimary="false" name="Val" type="uniqueidentifier"/>
+                        </fields>
+                    </field>
+                </fields>
+            </outFormatMapping>
+            <outParameterMapping>
+                <fields/>
+            </outParameterMapping>
+            <links>
+                <link inId="8039c26f-ae44-4f7f-84b9-551791b59c9c" outId="1155b76f-ec92-4e86-8963-bd4bdd806789"/>
+                <link inId="fc74d574-4fd6-4914-84d5-01838ae437ed" outId="9da003b6-c980-459a-8859-ae439c6a76c6"/>
+                <link inId="9d4ae8c8-c86e-448d-b988-eadb7d725b44" outId="2bccb480-396c-431b-b392-448bc5a63809"/>
+                <link inId="571a95ec-e55d-458c-a024-a70ca14ef2d8" outId="81acd2ef-2bf7-41a1-80f0-4397389fa6fe"/>
+                <link inId="e7a3f387-ec55-4aa4-8937-c2d1f64547c3" outId="b9270b5b-5d7a-4427-98e0-9a5c95b0dea6"/>
+                <link inId="59fa9034-6ac6-428b-96a1-b79f9332f835" outId="b4b8effe-4ed1-4e13-9a17-dafa1f12c59e"/>
+                <link inId="db689515-389f-4bf5-9eed-a5b0e2669ba0" outId="aabf2e0a-e80e-4bb3-a446-89ca6fa1e3e0"/>
+            </links>
+        </mapping>
+        <messageParameters changeClassId="false" changeReceiver="false" changeType="false" classId="" receiver="" type="">
+            <properties/>
+        </messageParameters>
+        <options readTimeInterval="3000" useSendAsArray="false"/>
+        <postDeleteOptions deletePrimaryKey="" deleteTableName="" executeAfterSend="" useDeleteFromMethod="false" useExecuteAfterSend="false"/>
+        <dbParams>
+            <dbParams formatString="" name="DTR@classData_Ссылка" type="nchar" value="{/Message/XmlBody/classData/Ссылка}"/>
+        </dbParams>
+    </action>
+    <action createReply="false" enabled="true" insertOnly="false" name="МТР" type="TABLE_VIEW">
+        <testExpression>&lt;expression operator="And"&gt;
+  &lt;condition left="/Message/ClassId" operator="Equal" right="[{6ab56f33-4647-477c-a11a-b141497254d4}]"/&gt;
+&lt;/expression&gt;
+</testExpression>
+        <updateExpression>WHERE Code = DTR@classData_Код</updateExpression>
+        <query>MTP</query>
+        <mapping>
+            <inFormatMapping>
+                <fields>
+                    <field id="de311894-2b4e-442e-adb1-83333f96215d" isArray="false" isPrimary="false" name="Message">
+                        <fields>
+                            <field id="31f1c193-7936-4c59-a85b-75c281ecd241" isArray="false" isPrimary="false" name="Id"/>
+                            <field id="c687fc3c-cd9b-4b7b-9105-24ff73ec4b9c" isArray="false" isPrimary="false" name="Type"/>
+                            <field id="b509529e-7037-433a-b740-40359354f7c8" isArray="false" isPrimary="false" name="CreationTime"/>
+                            <field id="bd1d18ce-e6bd-4b2f-9cbf-29a28b29db11" isArray="false" isPrimary="false" name="ClassId"/>
+                            <field id="66cae25b-f113-415e-a228-635f437afaff" isArray="false" isPrimary="false" name="Source"/>
+                            <field id="f80e3727-0a7c-4acd-b6b1-ccd6708b8687" isArray="false" isPrimary="false" name="Receivers"/>
+                            <field id="5c915c4a-4626-4993-8f5f-3d760c07a73e" isArray="false" isPrimary="false" name="ReplyTo"/>
+                            <field id="c36d0ada-2881-42fd-8cd5-46429c8eadef" isArray="false" isPrimary="false" name="Property">
+                                <fields/>
+                            </field>
+                            <field id="34fd6aa1-4ecf-431f-a8ac-d29ff26e959b" isArray="false" isPrimary="false" name="Body"/>
+                            <field id="b3e0f0a1-813c-4e33-8993-3c66b1ff0893" isArray="false" isPrimary="false" name="XmlBody">
+                                <fields>
+                                    <field id="5a916556-dd1d-4494-9711-c4823d68497c" isArray="false" isPrimary="false" name="classData">
+                                        <fields>
+                                            <field id="f6c16ff9-6ea2-46c6-9d19-59c32e55e577" isArray="false" isPrimary="false" name="Артикул" type="String"/>
+                                            <field id="de1e7579-8369-4459-848a-3c5789fce9d0" isArray="false" isPrimary="false" name="КаталожныйНомер" type="String"/>
+                                            <field id="0192b205-8d7a-4ee3-863f-f58cfcf2394b" isArray="false" isPrimary="false" name="Наименование" type="String"/>
+                                            <field id="7d7f6629-98cf-48f3-bf1a-6c312cf92328" isArray="false" isPrimary="false" name="Код" type="String"/>
+                                        </fields>
+                                    </field>
+                                </fields>
+                            </field>
+                        </fields>
+                    </field>
+                </fields>
+            </inFormatMapping>
+            <outFormatMapping>
+                <fields>
+                    <field id="dded6322-2cd9-4729-8ad4-b3f5a27ca583" isArray="false" isPrimary="false" name="MTP">
+                        <fields>
+                            <field id="62452431-e0f8-4b25-b445-907674a57a59" isArray="false" isPrimary="false" name="ArticleNumber" type="nchar"/>
+                            <field id="689f9d26-bfb3-4fcc-a20e-bd4d8c44beb5" isArray="false" isPrimary="false" name="CatalogNumber" type="nchar"/>
+                            <field id="68c50c6c-8e89-46d2-a43b-1bdee9d9bbb2" isArray="false" isPrimary="false" name="Code" type="int"/>
+                            <field id="deb96de6-6431-4bb2-9422-46ad37355012" isArray="false" isPrimary="false" name="Name" type="nchar"/>
+                            <field id="a7d69bb1-045f-4f6f-913a-da943d086a2a" isArray="false" isPrimary="false" name="WorkedOut" type="nchar"/>
+                        </fields>
+                    </field>
+                </fields>
+            </outFormatMapping>
+            <outParameterMapping>
+                <fields/>
+            </outParameterMapping>
+            <links>
+                <link inId="f6c16ff9-6ea2-46c6-9d19-59c32e55e577" outId="62452431-e0f8-4b25-b445-907674a57a59"/>
+                <link inId="de1e7579-8369-4459-848a-3c5789fce9d0" outId="689f9d26-bfb3-4fcc-a20e-bd4d8c44beb5"/>
+                <link inId="7d7f6629-98cf-48f3-bf1a-6c312cf92328" outId="68c50c6c-8e89-46d2-a43b-1bdee9d9bbb2"/>
+                <link inId="0192b205-8d7a-4ee3-863f-f58cfcf2394b" outId="deb96de6-6431-4bb2-9422-46ad37355012"/>
+            </links>
+        </mapping>
+        <messageParameters changeClassId="false" changeReceiver="false" changeType="false" classId="" receiver="" type="">
+            <properties/>
+        </messageParameters>
+        <options readTimeInterval="3000" useSendAsArray="false"/>
+        <postDeleteOptions deletePrimaryKey="" deleteTableName="" executeAfterSend="" useDeleteFromMethod="false" useExecuteAfterSend="false"/>
+        <dbParams>
+            <dbParams formatString="" name="DTR@classData_Код" type="varchar" value="{/Message/XmlBody/classData/Код}"/>
+        </dbParams>
+    </action>
+</actions>
+      </messageSources>
+    </msSqlOut>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList/>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList>
+      <switchTransformation messageProperty="/Message/ClassId">
+        <default>
+          <transformationList/>
+        </default>
+        <cases>
+          <caseTransformation compareValue="{b4e6bbeb-2516-4d18-a5c8-4da867213f11}" isNull="false">
+            <ifTrue>
+              <transformationList>
+                <trackEnable journal="Test" loggingServer="srv-dt-mdm-demo-02-LS"/>
+                <changeFormat>
+                  <format>XML</format>
+                  <messageClassId/>
+                  <messageClassName/>
+                  <messageType/>
+                  <receiver/>
+                  <xmlRootName/>
+                  <useXmlRoot>false</useXmlRoot>
+                </changeFormat>
+              </transformationList>
+            </ifTrue>
+          </caseTransformation>
+        </cases>
+      </switchTransformation>
+    </transformationList>
+  </outgoingTransformationBlock>
+</adapter>

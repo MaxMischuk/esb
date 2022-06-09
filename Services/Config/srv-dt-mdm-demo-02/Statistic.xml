@@ -1,0 +1,19 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="23930310-98f0-4709-97f4-346a73150de6" id="Statistic" isClient1C="false" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <customNetOut factory="ESB_ConnectionPoints.ESBPerformanceCounters.OutgoingConnectionPointFactory, ESB_ConnectionPoints.ESBPerformanceCounters" name="out" pluginName="ESB_ConnectionPoints.ESBPerformanceCounters-1.0.0.48-dotNET-WINDOWS" pluginVersion="1.0.0.48" timeout="10">
+      <parameters>
+        <parameter name="Настройки в формате JSON" value="{&#13;&#10;// адрес http-сервиса&#13;&#10;  &quot;Network&quot;: {&#13;&#10;    &quot;Address&quot;: &quot;192.168.110.36&quot;,&#13;&#10;    &quot;Port&quot;: 8080&#13;&#10;  },&#13;&#10;&#13;&#10;// настройка аутентификации (как для коннектора http-сервер)&#13;&#10;  &quot;Authentication&quot;: {&#9;&#13;&#10;    &quot;NoAuthentication&quot;: true,&#13;&#10;    &quot;Basic&quot;: {&#13;&#10;      &quot;Login&quot;: &quot;Login&quot;,&#13;&#10;      &quot;Password&quot;: &quot;Password&quot;&#13;&#10;    },&#13;&#10;    &quot;Token&quot;: {&#13;&#10;      &quot;Value&quot;: &quot;token&quot;,&#13;&#10;      &quot;Header&quot;: &quot;Token&quot;,&#13;&#10;      &quot;Query&quot;: &quot;Token&quot;&#13;&#10;    }&#13;&#10;  },&#13;&#10;&#13;&#10;// прочие настройки (как для коннектора http-сервер)&#13;&#10;  &quot;MaxRequestLineSize&quot;: 8192,&#13;&#10;  &quot;MaxRequestHeaderSize&quot;: 65536,&#13;&#10;  &quot;MaxActiveRequests&quot;: 10,&#13;&#10;  &quot;MaxUrlEncodedFormSize&quot;: 5242880,&#13;&#10;  &quot;MaxPostSize&quot;: 204800,&#13;&#10;  &quot;RequestIdleTimeoutSeconds&quot;: 5,&#13;&#10;  &quot;RequestHeaderReadTimeoutSeconds&quot;: 10,&#13;&#10;  &quot;KeepAliveMaxRequests&quot;: 30,&#13;&#10;  &quot;KeepAliveTimeoutSeconds&quot;: 10,&#13;&#10;  &quot;MaxProcessingTimeSeconds&quot;: 20&#13;&#10;}"/>
+        <parameter name="Режим отладки" value="true"/>
+      </parameters>
+    </customNetOut>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList/>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+</adapter>

@@ -1,0 +1,83 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="4007c0ae-88f5-4c30-8070-b6ce43145b5e" id="Rest_stat" isClient1C="false" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <restIngoingDynamicClient authenticationScheme="Anonymous" authorizationServer="" baseserver="http://192.168.110.36:8080" checkAkuthorizationServerCert="true" checkBaseServerCert="true" name="in" passwordCode="" userName="">
+      <dataQueries>
+        <query enabled="false" timeInterval="60000">
+          <methodCall httpMethod="GET" uri="http://192.168.110.36:8080/cf92bc88-e4f0-40a7-91f2-118c1484c5ff/In.Send.Durable/da82c959-30ff-4e47-a7a6-8520e220b8e3">
+            <httpHeaders/>
+          </methodCall>
+          <outputMessage changeClassId="true" changeReceiver="false" changeType="false" classId="{b4e6bbeb-2516-4d18-a5c8-4da867213f11}" receiver="" type="">
+            <properties>
+              <property name="Wy_is_it" type="String" value="MDM"/>
+            </properties>
+          </outputMessage>
+        </query>
+        <query enabled="true" timeInterval="60000">
+          <methodCall httpMethod="GET" uri="http://192.168.110.36:8080/4007c0ae-88f5-4c30-8070-b6ce43145b5e/Out.Send.Durable/da82c959-30ff-4e47-a7a6-8520e220b8e3">
+            <httpHeaders/>
+          </methodCall>
+          <outputMessage changeClassId="true" changeReceiver="false" changeType="false" classId="{b4e6bbeb-2516-4d18-a5c8-4da867213f11}" receiver="" type="">
+            <properties>
+              <property name="Why_is_it" type="String" value="Rest_stat"/>
+            </properties>
+          </outputMessage>
+        </query>
+        <query enabled="true" timeInterval="6000">
+          <methodCall httpMethod="GET" uri="http://192.168.110.36:8080/3819c84f-7046-460c-9e6b-9070ed24ccee/In.Routing.Durable/da82c959-30ff-4e47-a7a6-8520e220b8e3">
+            <httpHeaders/>
+          </methodCall>
+          <outputMessage changeClassId="true" changeReceiver="false" changeType="false" classId="{b4e6bbeb-2516-4d18-a5c8-4da867213f11}" receiver="" type="">
+            <properties>
+              <property name="Why_is_it" type="String" value="DTS"/>
+            </properties>
+          </outputMessage>
+        </query>
+      </dataQueries>
+    </restIngoingDynamicClient>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList>
+      <switchTransformation messageProperty="/Message/ClassId">
+        <default>
+          <transformationList/>
+        </default>
+        <cases>
+          <caseTransformation compareValue="{b4e6bbeb-2516-4d18-a5c8-4da867213f11}" isNull="false">
+            <ifTrue>
+              <transformationList>
+                <javaScript>
+                  <script><![CDATA[var Body = message.getBodyAsString();
+var BodyJS = JSON.parse(Body);
+
+var classData = {
+    "Data": {
+        "Node": BodyJS.Data.Node,
+        "Object": BodyJS.Data.Object,
+        "SendNext": 1,
+        "Counter": {
+            "Name": BodyJS.Data.Counter.Name,
+            "DateTime": BodyJS.Data.Counter.DateTime,
+            "Value": BodyJS.Data.Counter.Value
+        }
+    }
+};
+
+var res = { classData };
+var strBody = JSON.stringify(res);
+
+message.setBodyFromString(strBody);]]></script>
+                </javaScript>
+              </transformationList>
+            </ifTrue>
+          </caseTransformation>
+        </cases>
+      </switchTransformation>
+    </transformationList>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+</adapter>

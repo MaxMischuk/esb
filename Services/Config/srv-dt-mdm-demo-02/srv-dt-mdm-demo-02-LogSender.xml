@@ -1,0 +1,146 @@
+<logSender dtsName="srv-dt-mdm-demo-02-DTS" dtsUri="net.tcp://127.0.0.1:7890" loggingServerName="srv-dt-mdm-demo-02-LS" nodeId="srv-dt-mdm-demo-02-LogSender">
+  <monitors>
+    <monitor serviceId="070560a7-677f-4d63-bf3e-e8c4aadac0b4">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\NodeManager" />
+        <path value="C:\ProgramData\Datareon\ESB\Logs\NodeManagerEsbService" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+      </senders>
+    </monitor>
+    <monitor serviceId="00000000-0000-0000-1111-111111111111">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\ControlServer" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+      </senders>
+    </monitor>
+    <monitor serviceId="3819c84f-7046-460c-9e6b-9070ed24ccee">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\DataTransferServer" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+      </senders>
+    </monitor>
+    <monitor serviceId="8263fa15-e6a9-43cd-8bd4-84896e946386">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\LoggingServer" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+      </senders>
+    </monitor>
+    <monitor serviceId="91652165-4bf7-4c8b-b4a2-e3f6d4402b86">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\MessageStorage" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+      </senders>
+    </monitor>
+    <monitor serviceId="cf92bc88-e4f0-40a7-91f2-118c1484c5ff">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\cf92bc88-e4f0-40a7-91f2-118c1484c5ff" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+    </monitor>
+    <monitor serviceId="308d304b-58b2-4bb4-bfcf-8302580deaa1">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\308d304b-58b2-4bb4-bfcf-8302580deaa1" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+    </monitor>
+    <monitor serviceId="23930310-98f0-4709-97f4-346a73150de6">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\23930310-98f0-4709-97f4-346a73150de6" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+    </monitor>
+    <monitor serviceId="f918c798-9527-4890-b29b-621d1ece4ccb">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\f918c798-9527-4890-b29b-621d1ece4ccb" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+    </monitor>
+    <monitor serviceId="4007c0ae-88f5-4c30-8070-b6ce43145b5e">
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\4007c0ae-88f5-4c30-8070-b6ce43145b5e" />
+      </paths>
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+    </monitor>
+    <monitor serviceId="9ecac5fd-6e3b-4f38-8e9e-d5ea575d39a4">
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\9ecac5fd-6e3b-4f38-8e9e-d5ea575d39a4" />
+      </paths>
+    </monitor>
+    <monitor serviceId="0deaee2b-3933-4fea-9140-c69c33c0d3af">
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\0deaee2b-3933-4fea-9140-c69c33c0d3af" />
+      </paths>
+    </monitor>
+    <monitor serviceId="4a5230e1-d644-4ea1-9c03-629f0c50eb52">
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\4a5230e1-d644-4ea1-9c03-629f0c50eb52" />
+      </paths>
+    </monitor>
+    <monitor serviceId="691d1987-e5e2-43d7-a67f-b3e6b877ab63">
+      <senders>
+        <sender type="Debug" />
+        <sender type="Trace" />
+        <sender type="Metrics" />
+        <sender type="Tokens" />
+      </senders>
+      <paths>
+        <path value="C:\ProgramData\Datareon\ESB\Logs\Adapter\691d1987-e5e2-43d7-a67f-b3e6b877ab63" />
+      </paths>
+    </monitor>
+  </monitors>
+</logSender>

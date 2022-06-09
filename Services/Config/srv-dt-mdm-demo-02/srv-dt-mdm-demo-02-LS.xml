@@ -1,0 +1,10 @@
+<esb.loggingServer id="srv-dt-mdm-demo-02-LS" isStarted="true" port="27017" server="localhost">
+  <esbClient serverId="srv-dt-mdm-demo-02-DTS" serverUri="esb://srv-dt-mdm-demo-02-DTS"/>
+  <journalConfig expireAfter="30" expireAfterMeasure="Day" name="Журнал"/>
+  <traceConfig expireAfter="30" expireAfterMeasure="Day" name="События обработки сообщений"/>
+  <counterConfig expireAfter="1" expireAfterMeasure="Day" name="Счетчики"/>
+  <tokenConfig expireAfter="30" expireAfterMeasure="Day" name="Токены"/>
+  <journals>
+    <journal expireAfter="1" expireAfterMeasure="Day" name="Test"/>
+  </journals>
+</esb.loggingServer>

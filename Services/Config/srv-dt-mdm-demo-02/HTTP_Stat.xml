@@ -1,0 +1,13 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="f918c798-9527-4890-b29b-621d1ece4ccb" id="HTTP_Stat" isClient1C="false" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList/>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+</adapter>

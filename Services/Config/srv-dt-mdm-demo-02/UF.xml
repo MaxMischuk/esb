@@ -1,0 +1,50 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="4a5230e1-d644-4ea1-9c03-629f0c50eb52" id="UF" isClient1C="true" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <ingoing1cServer maxBatchSize="100" maxMessageSize="536870912" messageFormat="Xml" name="in" pubPort="8090" serverMode="Batch" serverName="" serverPort="8090" serverType="TCP" useCompabilityMode="false" useCustomAddress="false" useHttps="false"/>
+    <outgoing1cClient bufferSize="50" bufferSizeMeasure="MB" clientType="TCP" csaSettings="{&quot;AutoStartProcessing&quot;:true,&quot;WaitingTime&quot;:10,&quot;MaxFlowIn&quot;:5,&quot;MaxFlowOut&quot;:5,&quot;ShutDown&quot;:false,&quot;SerializationFormat&quot;:&quot;XML&quot;,&quot;IsUpdatedFromCsa&quot;:false,&quot;LiveTimeDefault&quot;:30}" dbName="Base1C" key="fc24935b-3c22-4998-bc6a-3c76c9c2a258" messageFormat="Xml" name="out" pubPort="9092" serverUri="http://9090/Base1C/ws/ESBExchange.1cws">
+      <generators/>
+      <livetimes/>
+      <queueSettings maxInput="500" maxOutput="500" normInput="10" normOutput="10"/>
+      <serverAddresses>
+        <serverAddress address="srv-dt-mdm-demo-02" port="1541"/>
+      </serverAddresses>
+    </outgoing1cClient>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList/>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+  <templateList>
+    <template guid="e406f025-cad9-43b3-9c54-ef6028d805c7" installedVersion="0" isStarted="true" name="ESW-1.УФ.Валюты.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="c08e2b8a-1f98-4131-a5cf-4802b83738ca" installedVersion="0" isStarted="true" name="ESW-1.УФ.Контрагенты.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="15440e83-4274-4518-8ba0-22ebbb78ad5b" installedVersion="0" isStarted="true" name="ESW-1.УФ.Организации.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="cacbc4ec-598a-421e-b939-7eb85008d7a3" installedVersion="0" isStarted="true" name="ESW-1.УФ.Поступления.In" variablesVersion="1">
+      <variableList>
+        <variable isDefault="true" name="ЗадержкаЗапросаДанных" value="" value1c=""/>
+        <variable isDefault="true" name="ЗадержкаБлокировки" value="" value1c=""/>
+      </variableList>
+    </template>
+    <template guid="ce38847b-0d09-4c2e-a7d8-292b46544216" installedVersion="0" isStarted="true" name="ESW-1.УФ.Склады.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="988eb26d-97a0-4f0b-80a5-fb94da30c3b6" installedVersion="0" isStarted="true" name="ESW-1.УФ.Товары.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="cef21fe8-cb03-4270-a433-f8eb126cd36a" installedVersion="0" isStarted="true" name="ESW-1.ЗапросДанных.Out" variablesVersion="1">
+      <variableList>
+        <variable isDefault="true" name="ИдентификаторКлассаЗапросаДанных" value="" value1c=""/>
+      </variableList>
+    </template>
+  </templateList>
+</adapter>

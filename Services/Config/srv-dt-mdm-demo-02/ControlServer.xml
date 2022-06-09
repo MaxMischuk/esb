@@ -1,0 +1,7 @@
+<controlServer>
+  <connectionPoints>
+    <esbServer name="innerTcpServer" serverUri="net.tcp://0.0.0.0:7896"/>    
+    <esbServer name="ipv1Server" serverUri="net.tcp://0.0.0.0:7897"/>
+  </connectionPoints>
+  <distribFolder path="C:\ProgramData\Axelot\ESB\Distrib\"/>
+</controlServer>

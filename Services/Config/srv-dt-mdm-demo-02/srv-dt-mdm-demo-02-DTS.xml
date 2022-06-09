@@ -1,0 +1,10 @@
+<esb.dataTransferServer cacheItemSize="1048576" cacheSize="100" id="srv-dt-mdm-demo-02-DTS" inputMessageHandlersCount="5" isStarted="true" memoryPerformance="MiddlePerformance" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbServer name="esbServerTcp" serverUri="net.tcp://0.0.0.0:7890">
+      <security certPasswordCode="" certPath="" findType="FindBySubjectName" findValue="" isSecured="false" sslProtocol="Tls12" storeLocation="LocalMachine" storeName="My" useStore="false"/>
+    </esbServer>
+    <esbServer name="esbServerPipe" serverUri="net.pipe://DtsPipeChannel">
+      <security certPasswordCode="" certPath="" findType="FindBySubjectName" findValue="" isSecured="false" sslProtocol="Tls12" storeLocation="LocalMachine" storeName="My" useStore="false"/>
+    </esbServer>
+  </connectionPoints>
+</esb.dataTransferServer>

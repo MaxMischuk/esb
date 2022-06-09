@@ -1,0 +1,38 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="cf92bc88-e4f0-40a7-91f2-118c1484c5ff" id="MDM" isClient1C="true" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <ingoing1cServer maxBatchSize="100" maxMessageSize="536870912" messageFormat="Xml" name="in" pubPort="8090" serverMode="Batch" serverName="" serverPort="8090" serverType="Soap" useCompabilityMode="false" useCustomAddress="false" useHttps="false"/>
+    <outgoing1cClient batchMessageSize="100" clientType="Soap" csaSettings="{&quot;AutoStartProcessing&quot;:true,&quot;WaitingTime&quot;:10,&quot;MaxFlowIn&quot;:5,&quot;MaxFlowOut&quot;:5,&quot;ShutDown&quot;:false,&quot;SerializationFormat&quot;:&quot;XML&quot;,&quot;IsUpdatedFromCsa&quot;:true,&quot;LiveTimeDefault&quot;:30}" maxMessageSize="524288000" messageFormat="Xml" name="out" passwordCode="EO25wcVY2sFDJoFf68vaaA==" serverUri="http://srv-dt-mdm-demo-02/MDM/ws/ESBExchange.1cws" threadsCount="2" userName="esb">
+      <generators/>
+      <livetimes>
+        <livetime status="ОшибкаОбработки" timelive="1" type="Исходящая"/>
+      </livetimes>
+      <queueSettings maxInput="500" maxOutput="500" normInput="10" normOutput="10"/>
+    </outgoing1cClient>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList/>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+  <templateList>
+    <template guid="a792eb42-388c-45fa-93f6-dc362c1dff4d" installedVersion="0" isStarted="true" name="Валюты.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="78bcc212-50c7-44ad-8f2c-a95cf88d3288" installedVersion="0" isStarted="true" name="Валюты.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="64d20703-3f79-44c4-8132-88bbcc182c5a" installedVersion="0" isStarted="false" name="Statistic.In" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="d93abf4c-b40e-4199-b1d7-1740f6465d07" installedVersion="0" isStarted="true" name="МТР.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="3cfe506e-15e4-4ed6-9c3d-38c938c1bca9" installedVersion="0" isStarted="true" name="МТР.In" variablesVersion="0">
+      <variableList/>
+    </template>
+  </templateList>
+</adapter>

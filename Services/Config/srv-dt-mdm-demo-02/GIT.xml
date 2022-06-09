@@ -1,0 +1,26 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="691d1987-e5e2-43d7-a67f-b3e6b877ab63" id="GIT" isClient1C="false" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="esb://srv-dt-mdm-demo-02-DTS">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <customNetIn factory="Datareon.Git.EsbPlugin.IngoingConnectionPointFactory, Datareon.Git.EsbPlugin" name="in" pluginName="Datareon.Git.EsbPlugin-1.0.0.75-dotNET-WINDOWS" pluginVersion="Auto" timeout="10">
+      <parameters>
+        <parameter name="Каталог конфигурации ESB" value="C:\ProgramData\Datareon\ESB\Data"/>
+        <parameter name="Удаленный репозиторий GIT" value="https://github.com/MaxMischuk/esb.git"/>
+        <parameter name="Имя пользователя GIT" value="MaxMischuk"/>
+        <parameter name="Пароль пользователя GIT" value="haM911_pGh"/>
+        <parameter name="Локальный репозиторий GIT" value="C:\GIT_esb\my_esb\esb"/>
+        <parameter name="Ветка GIT" value="main"/>
+        <parameter name="Режим совместимости" value="2.4.3"/>
+        <parameter name=".gitignore" value=""/>
+        <parameter name="Режим отладки" value="true"/>
+      </parameters>
+    </customNetIn>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList/>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+</adapter>
