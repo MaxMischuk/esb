@@ -1,0 +1,47 @@
+<adapter cacheItemSize="1048576" cacheSize="100" entityId="0deaee2b-3933-4fea-9140-c69c33c0d3af" id="BP" isClient1C="true" memoryPerformance="MiddlePerformance" platform="Auto" processorPerformance="HighPerformance" useCache="true">
+  <connectionPoints>
+    <esbClient name="esbClient" serverId="srv-dt-mdm-demo-02-DTS" serverUri="net.pipe://DtsPipeChannel">
+      <security isSecured="false" sslProtocol="Tls12"/>
+    </esbClient>
+    <ingoing1cServer maxBatchSize="100" maxMessageSize="536870912" messageFormat="Xml" name="in" pubPort="8090" serverMode="Batch" serverName="" serverPort="8090" serverType="TCP" useCompabilityMode="false" useCustomAddress="false" useHttps="false"/>
+    <outgoing1cClient bufferSize="50" bufferSizeMeasure="MB" clientType="TCP" csaSettings="{&quot;AutoStartProcessing&quot;:true,&quot;WaitingTime&quot;:10,&quot;MaxFlowIn&quot;:5,&quot;MaxFlowOut&quot;:5,&quot;ShutDown&quot;:false,&quot;SerializationFormat&quot;:&quot;XML&quot;,&quot;IsUpdatedFromCsa&quot;:false,&quot;LiveTimeDefault&quot;:30}" dbName="BP1" key="cd79cd21-5810-41d4-b2b0-80a6aee6959a" messageFormat="Xml" name="out" pubPort="9091" serverUri="http://9091/BP1/ws/ESBExchange.1cws">
+      <generators/>
+      <livetimes/>
+      <queueSettings maxInput="500" maxOutput="500" normInput="10" normOutput="10"/>
+      <serverAddresses>
+        <serverAddress address="srv-dt-mdm-demo-02" port="1541"/>
+      </serverAddresses>
+    </outgoing1cClient>
+  </connectionPoints>
+  <ingoingTransformationBlock>
+    <transformationList>
+      <trackEnable journal="Test" loggingServer="srv-dt-mdm-demo-02-LS"/>
+    </transformationList>
+  </ingoingTransformationBlock>
+  <outgoingTransformationBlock>
+    <transformationList/>
+  </outgoingTransformationBlock>
+  <templateList>
+    <template guid="178dc3d6-a1fa-4fff-bf08-efc5599d7b99" installedVersion="0" isStarted="true" name="ESW-1.BP30.Валюты.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="3a5f8169-9234-42ed-b9cd-44a5b2ada8a6" installedVersion="0" isStarted="true" name="ESW-1.BP30.Контрагенты.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="bab2c081-65c7-410c-afef-9b063b6bc6b6" installedVersion="0" isStarted="true" name="ESW-1.BP30.Организации.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="922bfe68-e032-41f7-95f8-c284d0a0e5e1" installedVersion="0" isStarted="true" name="ESW-1.BP30.Поступление.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="c9a74e78-bce6-4599-9ca7-c6e7b4a7b8e1" installedVersion="0" isStarted="true" name="ESW-1.BP30.Склады.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="f72e60e4-7617-4d12-8c52-db185e4f4772" installedVersion="0" isStarted="true" name="ESW-1.BP30.Товары.Out" variablesVersion="0">
+      <variableList/>
+    </template>
+    <template guid="1ce1af4b-869a-46b7-adfd-578714aaf7c3" installedVersion="0" isStarted="true" name="ESW-1.BP30.ЗапросДанных.In" variablesVersion="0">
+      <variableList/>
+    </template>
+  </templateList>
+</adapter>
