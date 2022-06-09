@@ -1,0 +1,36 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="classData" nillable="true">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Ссылка" nillable="true" type="guid"/>
+        <xs:element minOccurs="0" name="ПометкаУдаления" nillable="true" type="xs:boolean"/>
+        <xs:element minOccurs="0" name="Дата" nillable="true" type="xs:dateTime"/>
+        <xs:element minOccurs="0" name="Поставщик" nillable="true" type="guid"/>
+        <xs:element minOccurs="0" name="Склад" nillable="true" type="guid"/>
+        <xs:element minOccurs="0" name="Организация" nillable="true" type="guid"/>
+        <xs:element minOccurs="0" name="Валюта" nillable="true" type="guid"/>
+        <xs:element name="Товары" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="row" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="Товар" nillable="true" type="guid"/>
+                    <xs:element minOccurs="0" name="Цена" nillable="true" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="Количество" nillable="true" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="Сумма" nillable="true" type="xs:decimal"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
